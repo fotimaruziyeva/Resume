@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- main area part start -->
+    <main>
+
+      <section class="content-box-area mt-4">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-xl-4">
+              <div class="card profile-card">
+                <div class="card-body">
+                  <div class="image text-center">
+                    <img src= {% static 'assets/img/images/dev.jpg' %} alt="profile" style="width:350px; height:350px;">
+                  </div>
+                  <div class="text">
+                    <h3 class="card-title">Fotima 👋</h3>
+                    <p>Men Full-stack dasturchiman va hozirda web dasturlarini yaratishda zamonaviy texnologiyalarni o‘rganishga jiddiy e’tibor qaratyapman. <span>Django, React, Next.js, HTML, CSS, REST framework,Typescript,Next Js, JavaScript, Sass, Bootstrap, Tailwind CSS va Python </span>kabi kuchli vositalarni egallab, sifatli va samarali yechimlar ishlab chiqishga intilaman. O‘z bilimlarimni amaliyotda qo‘llab, yangi dasturiy ta’minotlarni yaratish va foydalanuvchilarga qulay va intuitiv interfeyslar taqdim etishga qaratilgan loyihalar ustida ishlayapman.</p>
+                    <div class="common-button-groups">
+                      <a class="btn btn-call" href="{% url 'contact-page'%}">
+                        <svg class="icon" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M5.5 4H9.5L11.5 9L9 10.5C10.071 12.6715 11.8285 14.429 14 15.5L15.5 13L20.5 15V19C20.5 19.5304 20.2893 20.0391 19.9142 20.4142C19.5391 20.7893 19.0304 21 18.5 21C14.5993 20.763 10.9202 19.1065 8.15683 16.3432C5.3935 13.5798 3.73705 9.90074 3.5 6C3.5 5.46957 3.71071 4.96086 4.08579 4.58579C4.46086 4.21071 4.96957 4 5.5 4Z"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M15.5 7C16.0304 7 16.5391 7.21071 16.9142 7.58579C17.2893 7.96086 17.5 8.46957 17.5 9"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M15.5 3C17.0913 3 18.6174 3.63214 19.7426 4.75736C20.8679 5.88258 21.5 7.4087 21.5 9"
+                            stroke= "white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                       Number
+                      </a>
+                      <button class="btn btn-copy" data-clipboard-text="fotimabeautiful04@gmail.com">
+                        <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M8 10C8 9.46957 8.21071 8.96086 8.58579 8.58579C8.96086 8.21071 9.46957 8 10 8H18C18.5304 8 19.0391 8.21071 19.4142 8.58579C19.7893 8.96086 20 9.46957 20 10V18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H10C9.46957 20 8.96086 19.7893 8.58579 19.4142C8.21071 19.0391 8 18.5304 8 18V10Z"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M16 8V6C16 5.46957 15.7893 4.96086 15.4142 4.58579C15.0391 4.21071 14.5304 4 14 4H6C5.46957 4 4.96086 4.21071 4.58579 4.58579C4.21071 4.96086 4 5.46957 4 6V14C4 14.5304 4.21071 15.0391 4.58579 15.4142C4.96086 15.7893 5.46957 16 6 16H8"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Copy Email
+                      </button>
+                    </div>
+                    <div class="social-media-icon">
+                      <ul class="list-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fab fa-github"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-8">
+              <div class="card content-box-card">
+                <div class="card-body portfolio-card contact-card">
+                  <div class="top-info">
+                    <div class="text">
+                      <h1 class="main-title">Birga 👋<span>ishlaylik </span></h1>
+                      <p>Agar siz o'z g'oyangizni hayotga tatbiq etish uchun biznesingizni keyingi bosqichga olib chiqishga yordam beradigan dasturchi izlayotgan bo'lsangiz, men yordam berishim  mumkin .</p>
+                    </div>
+                  </div>
+                  <div class="contact-area">
+                    <div class="leave-comments-area">
+                      <div class="comments-box">
+                        <form id="contact-form" action="{% url 'home-page'%}" method="POST">
+                          {% csrf_token %}
+                          <div class="row gx-3">
+                            <div class="col-md-6">
+                              <div class="mb-4">
+                                <label class="form-label">Name:</label>
+                                <input name="name" required type="text" class="form-control shadow-none" placeholder="Enter your name">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="mb-4">
+                                <label class="form-label">Email</label>
+                                <input name='email'required type="email" class="form-control shadow-none" placeholder="Enter your email">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="mb-4">
+                                <label class="form-label">Subject</label>
+                                <input   name='subject'required type="text" class="form-control shadow-none" placeholder="Subject">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="mb-4">
+                                <label class="form-label">Budget</label>
+                                <select required class="form-select shadow-none" name='budjet'>
+                                  <option disabled selected>Select budget...</option>
+                                  <option value="$5000">$5000</option>
+                                  <option value="$5000 - $1000">$5000 - $10000</option>
+                                  <option value="$10000 - $2000">$10000 - $20000</option>
+                                  <option value="$20000">$20000+</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="mb-4">
+                                <label class="form-label">Comment</label>
+                                <textarea name="comment" class="form-control shadow-none" rows="4"
+                                  placeholder="Type details about your inquiry"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <button class="submit-btn" type="submit">
+                                Send Message
+                                <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M17.5 11.6665V6.6665H12.5" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                  <path d="M17.5 6.6665L10 14.1665L2.5 6.6665" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="contact-map-area">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280012016!2d-74.14448732737499!3d40.69763123331177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1711832776336!5m2!1sen!2sbd"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="frequently-asked-questions">
+                      <h2 class="main-common-title">Tez-tez so'raladigan savollar
+                      </h2>
+                      <div class="frequently-asked-questions-main">
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h4 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Dasturlashni qayerdan boshlashim kerak?
+                                <span class="ms-auto">
+                                  <span class="icon ms-4">
+                                    <img class="icon-plus" src={% static "assets/img/icons/plus.svg"%} alt="plus">
+                                    <img class="icon-minus d-none" src={% static "assets/img/icons/minus.svg"%} alt="minus">
+                                  </span>
+                                </span>
+                              </button>
+                            </h4>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                              data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p>Yangi boshlovchilar uchun Python dasturlash tili eng yaxshi tanlovdir, chunki u o'qish va tushunishda oson. Keyinchalik, kerak bo'lsa, JavaScript, Java, yoki C++ kabi tillarga o'tishingiz mumkin.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h4 class="accordion-header" id="headingTwo">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Dasturlash tilini o'rganishda qaysi resurslardan foydalanish kerak?
+                                <span class="ms-auto">
+                                  <span class="icon ms-4">
+                                    <img class="icon-plus" src={% static "assets/img/icons/plus.svg"%} alt="plus">
+                                    <img class="icon-minus d-none" src={% static "assets/img/icons/minus.svg"%} alt="minus">
+                                  </span>
+                                </span>
+                              </button>
+                            </h4>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                              data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p>Onlayn kurslar va interaktiv platformalar dasturlashni o'rganish uchun juda yaxshi</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h4 class="accordion-header" id="headingThree">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Dasturlashni o'rganishning eng samarali usuli qanday?
+                                <span class="ms-auto">
+                                  <span class="icon ms-4">
+                                    <img class="icon-plus" src={% static "assets/img/icons/plus.svg"%} alt="plus">
+                                    <img class="icon-minus d-none" src={% static "assets/img/icons/minus.svg"%} alt="minus">
+                                  </span>
+                                </span>
+                              </button>
+                            </h4>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                              data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p>Dasturlashni o'rganishda eng samarali usul – kod yozishdir. Tez-tez kichik kodlarni yozish va test qilish yordamida tushuncha shakllanadi. Agar o'qigan narsangizni amaliyotga tatbiq etsangiz, ko'proq bilib olasiz.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h4 class="accordion-header" id="headingFour">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Qanday qilib xatoliklarni to'g'ri tahlil qilib, tuzatishim mumkin?
+                                <span class="ms-auto">
+                                  <span class="icon ms-4">
+                                    <img class="icon-plus" src={% static "assets/img/icons/plus.svg"%} alt="plus">
+                                    <img class="icon-minus d-none" src={% static "assets/img/icons/minus.svg"%} alt="minus">
+                                  </span>
+                                </span>
+                              </button>
+                            </h4>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                              data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p>Debugging: Dasturda xatoliklar yuzaga kelganda, uni aniqlash uchun debugger vositalaridan foydalaning.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h4 class="accordion-header" id="headingFive">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Dasturlashda qanday muammolarni tez-tez uchratish mumkin?
+                                <span class="ms-auto">
+                                  <span class="icon ms-4">
+                                    <img class="icon-plus" src={% static "assets/img/icons/plus.svg"%} alt="plus">
+                                    <img class="icon-minus d-none" src={% static "assets/img/icons/minus.svg"%} alt="minus">
+                                  </span>
+                                </span>
+                              </button>
+                            </h4>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                              data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p>Yangi boshlovchilar odatda quyidagi muammolarni uchratishadi:
+                                  Sintaksis xatoliklari (masalan, qavsni unutish)
+                                  O'zgaruvchilarning nomlarini noto'g'ri ishlatish
+                                  Ma'lumotlar turlarini to'g'ri ishlatmaslik
+                                  Algoritmlar noto'g'ri ishlashi</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- background shape area start -->
+     
+      <!-- background shape area end -->
+    </main>
+    <!-- main area part end -->
+    {% endblock content %}
